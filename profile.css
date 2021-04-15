@@ -1,0 +1,531 @@
+body{
+	margin:0px;
+}
+
+
+
+/*
+ * MENU BUTTON
+ */
+@import url("https://fonts.googleapis.com/css?family=K2D");
+.menu__toggler {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  height: 28px;
+  width: 28px;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+	align-items: center;
+	color:white;
+	position: fixed;
+	
+}
+.menu__toggler span,
+.menu__toggler span::before,
+.menu__toggler span::after {
+  position: absolute;
+  content: '';
+  width: 28px;
+  height: 2.5px;
+  background: currentColor;
+  border-radius: 20px;
+  transition: 500ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+.menu__toggler span::before {
+  top: -8px;
+}
+.menu__toggler span::after {
+  top: 8px;
+}
+.menu__toggler.active > span {
+  background: transparent;
+}
+.menu__toggler.active > span::before, .menu__toggler.active > span::after {
+  background: #c24d1b;
+  top: 0px;
+}
+.menu__toggler.active > span::before {
+	transform: rotate(-225deg);
+}
+.menu__toggler.active > span::after {
+	transform: rotate(225deg);
+}
+
+/*
+ * SLIDING MENU PANEL
+ */
+
+.menu {
+  position: absolute;
+  left: -30%;
+  z-index: 998;
+  background: rgba(250, 250, 250, 0.7);
+  width: 20%;
+  height: 100%;
+  padding: 50px;
+  display: flex;
+	flex-direction: column;
+	justify-content: center;
+  transition: 300ms left cubic-bezier(0.77, 0, 0.175, 1);
+	position: fixed;
+}
+@media only screen and (max-width: 600px) {
+  .menu {
+    width: 250px;
+    left: -250px;
+    padding: 50px;
+  }
+}
+
+a {
+	-moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -ms-transition: 0.3s;
+    transition: 0.3s;
+}
+
+ a,li{ 
+	/*リセット*/
+  color: black;
+  text-decoration: none;
+  list-style: none;
+}
+
+ul{
+  font-size: 3em;
+  font-weight: bolder;
+  color: black;
+}
+
+a:hover{
+	color:#c24d1b;
+}
+.link { /*要素の整列*/
+ margin-left: 1rem;
+ text-align: center;
+}
+
+.hover-Uline {
+  position: relative;/*疑似要素の親を固定*/
+  cursor: pointer;/*カーソルをポインターへ*/
+  text-decoration: none; /*ホバーなしは非表示*/
+}
+
+.hover-Uline:before {
+  content: ""; /*疑似要素の中身は空（記述は必須）*/
+  position: absolute; /*子要素として疑似要素を固定*/
+  left: 0; /*長さはテキストの両端まで*/
+  right: 0; /*長さはテキストの両端まで*/
+  bottom: -5px;  /*線の上下位置*/
+  width: 100%; /*線の長さ*/
+  height: 1px; /*線の太さ*/
+  background-color:#c24d1b; /*線の色*/
+  transform: scale(0, 1); /*横方向に0状態から全体まで線を入れる*/
+  transform-origin: center; /*中央を起点にアニメーション*/
+  transition: transform .2s; /*アニメーションの時間*/
+}
+
+.hover-Uline:hover:before {
+  transform: scale(1); /*ホバー時に等倍へ拡大*/
+}
+
+.menu.active {
+  left: 0;
+}
+.menu li {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+	 font-family:'Avenir','Helvetica, Neue','Helvetica','Arial';
+}
+
+/*
+ * BASIC STYLES
+ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+	font-family: 'Encode Sans Condensed',
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url(/assets/images/photo_2_back.jpg);
+}
+
+h1 {
+  color: currentColor;
+  mix-blend-mode: overlay;
+}
+
+
+#layer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+	background-image: url(/assets/images/photo_2_back.jpg);
+	
+}
+
+.profile{
+	color:white;
+font-family: vdl-v7gothic, sans-serif;
+font-weight: 400px;
+font-style: normal;
+	text-align:center;
+	padding-top:50px;
+
+}
+
+p1{
+	color:white;
+font-family: vdl-logog, sans-serif;
+	font-size:30px;
+font-weight: 400px;
+font-style: normal;
+	text-align:center;
+	line-height:70px;
+}
+
+p2{
+		color:white;
+font-family: vdl-logog, sans-serif;
+	font-size:20px;
+font-weight: 500px;
+font-style: normal;
+	text-align:center;
+	line-height:70px;
+}
+
+.gazou{
+	padding-top:20%;
+	text-align : center
+}
+
+.gazou img{	
+	box-shadow: 0 10px 30px 0 rgba(4,53,128,.15);
+	border-radius:50%;
+	width:250px;
+	height:250px;
+}
+
+
+.insta_btn .facebook_btn {
+  display: inline-block;
+  text-align: center;/*中央揃え*/
+  color: #2e6ca5;/*文字色*/
+  font-size: 20px;/*文字サイズ*/
+  text-decoration: none;/*下線消す*/
+}
+
+.insta_btn .facebook_btn:hover {/*ホバー時*/
+  color:#668ad8;/*文字色*/
+  transition: .5s;/*ゆっくり変化*/
+}
+
+.insta_btn .insta {/*アイコンの背景*/
+  position: relative;/*相対配置*/
+  display: inline-block;
+  width: 50px;/*幅*/
+  height: 50px;/*高さ*/
+  background-color:#fff;
+  overflow: hidden;/*はみ出た部分を隠す*/
+  border-radius: 13px;/*角丸に*/
+	box-shadow: 0 10px 30px 0 rgba(4,53,128,.15);
+
+}
+
+.facebook_btn .facebook {/*アイコンの背景*/
+  position: relative;/*相対配置*/
+  display: inline-block;
+  width: 50px;/*幅*/
+  height: 50px;/*高さ*/
+  background-color:#fff;
+  overflow: hidden;/*はみ出た部分を隠す*/
+  border-radius: 13px;/*角丸に*/
+	box-shadow: 0 10px 30px 0 rgba(4,53,128,.15);
+
+}
+
+.insta_btn .fa-instagram {/*アイコン*/
+  color: #c24d1b;
+  position: relative;/*z-indexを使うため*/
+  z-index: 2;/*グラデーションより前に*/
+  font-size: 35px;/*アイコンサイズ*/
+  line-height: 50px;/*高さと合わせる*/
+}
+
+.facebook_btn .fa-facebook-f{
+	  color: #c24d1b;
+  position: relative;/*z-indexを使うため*/
+  z-index: 2;/*グラデーションより前に*/
+  font-size: 30px;/*アイコンサイズ*/
+  line-height: 50px;/*高さと合わせる*/
+}
+
+.twitter_btn .fa-twitter{
+	  color: #c24d1b;
+  position: relative;/*z-indexを使うため*/
+  z-index: 2;/*グラデーションより前に*/
+  font-size: 30px;/*アイコンサイズ*/
+  line-height: 50px;/*高さと合わせる*/
+}
+
+.twitter_btn .facebook {/*アイコンの背景*/
+  position: relative;/*相対配置*/
+  display: inline-block;
+  width: 50px;/*幅*/
+  height: 50px;/*高さ*/
+  background-color:#fff;
+  overflow: hidden;/*はみ出た部分を隠す*/
+  border-radius: 13px;/*角丸に*/
+	box-shadow: 0 10px 30px 0 rgba(4,53,128,.15);
+
+}
+
+
+.icon1{
+	text-align:center;
+}
+
+html{
+    /* フォントサイズの正確に */
+    -webkit-text-size-adjust: 100%;
+    /* 文字をシャープに */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* カーニングとリガチャ（合字）を調整 */
+    text-rendering: optimizeLegibility;
+}
+
+#page_top{
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  opacity: 0.8;
+	  background: white;
+  border-radius: 50%;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+	
+}
+#page_top a::before{
+font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  content: "\f077";
+  font-size: 20px;
+  color: #c24d1b;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -5px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+
+.font{
+	color:white;
+	
+}
+
+.icon1{
+		display: inline-block;
+	padding:  20px;             /* 余白指定 */
+    height: 200px;   
+	max-width:100%;/* 高さ指定 */
+	
+}
+
+.SNS{ 
+	text-align: center; 
+}
+
+.詳細{
+		display: block;
+	width: 100%;
+	/*絶対20pxのマージンを左右につける*/
+	max-width: calc(100% - 40px);
+	margin: 0px auto 80px auto;
+}
+
+@media (max-width: 572px) {
+.profile{
+	font-size: 13px;
+		padding-top:40px;
+}
+	p1 {
+		font-size:23px;
+	}	
+	p2{
+		font-size:19px;
+	}
+	.gazou img{	
+		width:200px;
+		height:200px;
+	}
+	.twitter_btn .facebook{
+	width: 40px;/*幅*/
+  height: 40px;/*高さ*/
+}
+
+.facebook_btn .facebook{
+	width: 40px;/*幅*/
+  height: 40px;/*高さ*/
+}
+	.insta_btn .insta {
+	width: 40px;/*幅*/
+  height: 40px;/*高さ*/
+}
+	.insta_btn .fa-instagram {/*アイコン*/
+  font-size: 25px;/*アイコンサイズ*/
+		  line-height: 40px;/*高さと合わせる*/
+}
+	.facebook_btn .fa-facebook-f{
+  font-size: 25px;/*アイコンサイズ*/
+  line-height: 40px;/*高さと合わせる*/
+}
+	.twitter_btn .fa-twitter{
+  font-size: 25px;/*アイコンサイズ*/
+  line-height: 40px;/*高さと合わせる*/
+}
+	.詳細{
+			margin: 0px auto 30px auto;
+	}
+}
+
+@media (max-width: 468px) {
+.profile{
+	font-size: 11px;
+		padding-top:30px;
+}	
+	p1{
+		font-size:19px;
+	}	
+	
+	p2{
+		font-size:14px;
+	}
+		.gazou img{	
+		width:150px;
+		height:150px;
+	}
+	.gazou{
+		padding-top:40%;
+	}
+		.twitter_btn .facebook{
+	width: 35px;/*幅*/
+  height: 35px;/*高さ*/
+}
+
+.facebook_btn .facebook{
+	width: 35px;/*幅*/
+  height: 35px;/*高さ*/
+}
+	.insta_btn .insta {
+	width: 35px;/*幅*/
+  height: 35px;/*高さ*/
+}
+	.insta_btn .fa-instagram {/*アイコン*/
+  font-size: 22px;/*アイコンサイズ*/
+		  line-height: 35px;/*高さと合わせる*/
+}
+	.facebook_btn .fa-facebook-f{
+  font-size: 22px;/*アイコンサイズ*/
+  line-height: 35px;/*高さと合わせる*/
+}
+	.twitter_btn .fa-twitter{
+  font-size: 22px;/*アイコンサイズ*/
+  line-height: 35px;/*高さと合わせる*/
+}
+	.詳細{
+			margin: 0px auto 0px auto;
+	}
+}
+}
+
+@media (max-width: 408px) {
+.profile{
+	font-size: 9px;
+		padding-top:20px;
+	
+}	
+		.gazou{
+		padding-top:30%;
+	}
+	p1{
+		font-size:17px;
+	}
+	p2{
+		font-size:13px;
+	}
+		.gazou img{	
+		width:130px;
+		height:130px;
+	}
+}
+
+@media (max-width: 375px) {
+
+	.gazou{
+		padding-top:40%;
+	}
+	p1{
+		font-size:15px;
+	}
+	p2{
+		font-size:11px;
+	}
+
+.twitter_btn .facebook{
+	width: 30px;/*幅*/
+  height: 30px;/*高さ*/
+	border-radius: 9px;
+}
+
+.facebook_btn .facebook{
+	width: 30px;/*幅*/
+  height: 30px;/*高さ*/
+	border-radius: 9px;
+}
+	.insta_btn .insta {
+	width: 30px;/*幅*/
+  height: 30px;/*高さ*/
+	border-radius: 9px;
+}
+	.insta_btn .fa-instagram {/*アイコン*/
+  font-size: 18px;/*アイコンサイズ*/
+		  line-height: 30px;/*高さと合わせる*/
+}
+	.facebook_btn .fa-facebook-f{
+  font-size: 18px;/*アイコンサイズ*/
+  line-height: 30px;/*高さと合わせる*/
+}
+	.twitter_btn .fa-twitter{
+  font-size: 18px;/*アイコンサイズ*/
+  line-height: 30px;/*高さと合わせる*/
+}
+	.詳細{
+			margin: 0px auto 10px auto;
+	}
+}
+
