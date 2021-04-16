@@ -172,7 +172,7 @@ body {
   display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: url(/assets/images/photo_2_back.jpg);
+	background-color: #c24c1a
 }
 
 h1 {
@@ -186,9 +186,10 @@ h1 {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-	background-color:#c24c1a
+	background-color: #c24c1a
 	
 }
+
 .profile{
 	color:white;
 font-family: vdl-v7gothic, sans-serif;
@@ -196,6 +197,8 @@ font-weight: 400px;
 font-style: normal;
 	text-align:center;
 	padding-top:50px;
+	width:100%;
+	font-size:18px;
 
 }
 
@@ -381,9 +384,9 @@ font-family: "Font Awesome 5 Free";
 	margin: 0px auto 80px auto;
 }
 
-@media (max-width: 572px) {
+@media (max-width: 600px) {
 .profile{
-	font-size: 13px;
+	font-size: 16px;
 		padding-top:40px;
 }
 	p1 {
@@ -427,17 +430,6 @@ font-family: "Font Awesome 5 Free";
 }
 
 @media (max-width: 468px) {
-.profile{
-	font-size: 11px;
-		padding-top:30px;
-}	
-	p1{
-		font-size:19px;
-	}	
-	
-	p2{
-		font-size:14px;
-	}
 		.gazou img{	
 		width:150px;
 		height:150px;
@@ -445,99 +437,20 @@ font-family: "Font Awesome 5 Free";
 	.gazou{
 		padding-top:40%;
 	}
-		.twitter_btn .facebook{
-	width: 35px;/*幅*/
-  height: 35px;/*高さ*/
-}
 
-.facebook_btn .facebook{
-	width: 35px;/*幅*/
-  height: 35px;/*高さ*/
-}
-	.insta_btn .insta {
-	width: 35px;/*幅*/
-  height: 35px;/*高さ*/
-}
-	.insta_btn .fa-instagram {/*アイコン*/
-  font-size: 22px;/*アイコンサイズ*/
-		  line-height: 35px;/*高さと合わせる*/
-}
-	.facebook_btn .fa-facebook-f{
-  font-size: 22px;/*アイコンサイズ*/
-  line-height: 35px;/*高さと合わせる*/
-}
-	.twitter_btn .fa-twitter{
-  font-size: 22px;/*アイコンサイズ*/
-  line-height: 35px;/*高さと合わせる*/
-}
 	.詳細{
 			margin: 0px auto 0px auto;
 	}
 }
-}
-
-@media (max-width: 408px) {
-.profile{
-	font-size: 9px;
-		padding-top:20px;
-	
-}	
-		.gazou{
-		padding-top:30%;
-	}
-	p1{
-		font-size:17px;
-	}
-	p2{
-		font-size:13px;
-	}
-		.gazou img{	
-		width:130px;
-		height:130px;
-	}
-}
 
 @media (max-width: 375px) {
-
-	.gazou{
-		padding-top:40%;
-	}
-	p1{
-		font-size:20px;
-	}
-	p2{
-		font-size:18px;
-	}
-
 .twitter_btn .facebook{
 	width: 30px;/*幅*/
   height: 30px;/*高さ*/
 	border-radius: 9px;
 }
-
-.facebook_btn .facebook{
-	width: 30px;/*幅*/
-  height: 30px;/*高さ*/
-	border-radius: 9px;
-}
-	.insta_btn .insta {
-	width: 30px;/*幅*/
-  height: 30px;/*高さ*/
-	border-radius: 9px;
-}
-	.insta_btn .fa-instagram {/*アイコン*/
-  font-size: 18px;/*アイコンサイズ*/
-		  line-height: 30px;/*高さと合わせる*/
-}
-	.facebook_btn .fa-facebook-f{
-  font-size: 18px;/*アイコンサイズ*/
-  line-height: 30px;/*高さと合わせる*/
-}
-	.twitter_btn .fa-twitter{
-  font-size: 18px;/*アイコンサイズ*/
-  line-height: 30px;/*高さと合わせる*/
-}
 	.詳細{
 			margin: 0px auto 10px auto;
 	}
 }
+
